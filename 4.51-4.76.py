@@ -3,54 +3,6 @@ import math
 import cmath
 from typing import Tuple, List, Union
 
- # 4.47
-def check_chain_ascending(a: float, b: float, c: float) -> bool:
-
-    return a < b < c
-
-def check_chain_b_gt_a_gt_c(a: float, b: float, c: float) -> bool:
-
-    return b > a > c
-
-
- # 4.48
-def is_one_divisor_of_other(x: int, y: int) -> bool:
-
-    if x == 0 and y == 0:
-
-        return False
-    if x == 0:
-        return False if y != 0 else False
-    if y == 0:
-        return False
-    return (y % x == 0) or (x % y == 0)
-
-def digits_of(n: int) -> List[int]:
-    n = abs(n)
-    if n == 0:
-        return [0]
-    digs = []
-    while n > 0:
-        digs.append(n % 10)
-        n //= 10
-    return digs[::-1]
-
-
- # 4.49
-def two_digit_contains(n: int, digit: int) -> bool:
-
-    if not 10 <= abs(n) <= 99:
-        raise ValueError("n должно быть двухзначным по модулю")
-    if not (0 <= digit <= 9):
-        raise ValueError("digit должен быть в 0..9")
-    return digit in digits_of(n)
-
- # 4.50
-def two_digit_contains_any_of(n: int, digits_set: List[int]) -> bool:
-    if not 10 <= abs(n) <= 99:
-        raise ValueError("n должно быть двухзначным по модулю")
-    return any(d in digits_of(n) for d in digits_set)
-
  # 4.51
 def three_digit_contains(n: int, digit: int) -> bool:
 
@@ -371,6 +323,7 @@ def knight_threat(a, b, c, d):
     _validate_coords(a, b, c, d)
     dx = abs(a - c); dy = abs(b - d)
     return (dx, dy) in ((1, 2), (2, 1))
+
 
 
 
