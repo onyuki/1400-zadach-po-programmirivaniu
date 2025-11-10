@@ -129,10 +129,10 @@ def solve_6_46(n: int) -> Tuple[int,int,int,int]:
     digs = digits(n)
     max_d = max(digs)
     min_d = min(digs)
-    # позиции с начала (1-based)
+    # позиции с начала
     pos_max_start = digs.index(max_d) + 1
     pos_min_start = digs.index(min_d) + 1
-    # позиции с конца (1-based)
+    # позиции с конца
     pos_max_end = len(digs) - (pos_max_start - 1)
     pos_min_end = len(digs) - (pos_min_start - 1)
     return pos_max_end, pos_min_end, pos_max_start, pos_min_start
@@ -309,6 +309,7 @@ def max_and_min_digit_distinct(n):
     s = str(n)
     digits = [int(ch) for ch in s]
     return max(digits), min(digits)
+
 
 
 
