@@ -91,13 +91,9 @@ def is_sum_max_min_divisible_by_a(n, a):
     if a == 0:
         raise ValueError("Деление на ноль не определено")
     return sum_max_min(n) % a == 0
-
 from typing import List, Tuple, Optional, Dict
-
 def digits(n: int) -> List[int]:
-    """Возвращает список цифр n слева направо. Предполагается n>0."""
     return [int(d) for d in str(n)]
-
 def product_of_digits(digs: List[int]) -> int:
     p = 1
     for d in digs:
@@ -313,6 +309,7 @@ def max_and_min_digit_distinct(n):
     s = str(n)
     digits = [int(ch) for ch in s]
     return max(digits), min(digits)
+
 
 
 
