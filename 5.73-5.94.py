@@ -8,7 +8,6 @@ eps = 1e-9
 
 while x <= L + eps:
     cosv = x / L
-    # защита от погрешностей округления
     cosv = max(-1.0, min(1.0, cosv))
     theta_deg = math.degrees(math.acos(cosv))
     print(f"x = {x:.1f} m -> θ = {theta_deg:.2f}°")
@@ -129,7 +128,7 @@ def sum_multiples_of_4(a, b):
     n = (last - first) // 4 + 1
     return n * (first + last) // 2
 
- # 5.86
+  # 5.86
 s_586 = sum(x for x in range(31, 100) if x % 3 == 0 and x % 10 in (2, 4, 8))
 
 import math
@@ -243,6 +242,7 @@ def numbers_whose_square_leq(N):
         return []
     max_k = int(math.isqrt(N))
     return list(range(1, max_k + 1))
+
 
 
 
